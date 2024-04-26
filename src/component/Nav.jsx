@@ -1,17 +1,26 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./Authprovider";
+import logout from '../assets/images/logout.png'
 
 const Nav = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const [isHovered, setIsHovered] = useState(false);
+    
     const handleMouseEnter = () => {
         setIsHovered(true);
-      };
+    };
     
-      const handleMouseLeave = () => {
+    const handleMouseLeave = () => {
         setIsHovered(false);
-      };
+    };
+    const handleclicked = () => {
+        logOut()
+            .then(res => console.log(res.user))
+            .catch(error => console.error(error))
+    }
+    
+    
     return (
         <div className="navbar bg-blue-900 mb-12 text-white">
             <div className="navbar-start">
@@ -45,18 +54,26 @@ const Nav = () => {
                         <li className="text-[17px] font-medium"><a>Home</a></li>
                     </Link>
                     <li>
-                       {
-                         user?( <details
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                        >
-                            <summary>Parent</summary>
-                            <ul className="p-2 text-black" style={{ display: isHovered ? "block" : "none" }}>
-                                <li className="text-xl font-semibold"><a>Username:{user.displayName}</a></li>
-                                <li><button className="text-xl font-semibold">Logout</button></li>
-                            </ul>
-                        </details>):(<Link to={'/log'}>Login</Link>)
-                       }
+                        {
+                            user ? (<details
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                <summary>
+                                    <img src={user.photoURL}
+                                        className="w-[40px] h-[40px] rounded-[50%]" alt="" srcset="" />
+                                </summary>
+                                <ul className="p-2 text-black" style={{ display: isHovered ? "block" : "none" }}>
+                                    <li className="text-xl font-semibold"><a>Username:{user.displayName}</a></li>
+                                    <li><button className="text-xl font-semibold flex items-center" onClick={handleclicked}>Logout
+                                        <img src={logout} className="w-[20px] h-[20px]" alt="" srcset="" />
+                                    </button></li>
+                                </ul>
+                            </details>) : (<div className="text-[17px] font-semibold text-white">
+                                <Link to={'/log'}>Login</Link>
+
+                            </div>)
+                        }
                     </li>
                     <Link to={'/reg'}>
                         <li className="text-[17px] font-medium">
@@ -66,7 +83,7 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+               <button>xyz</button>
             </div>
         </div>
     )

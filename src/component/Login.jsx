@@ -53,7 +53,7 @@ const Login = () => {
                             <input type={show ? 'text' : "password"} name="password" placeholder="Password" className="input input-bordered mb-3 w-full" />
 
                         </div>
-                        <button type="submit" className="btn glass text-xl font-semibold text-center w-full">Login</button>
+                        <button type="submit" className="btn glass bg-blue-900 text-xl font-semibold text-center w-full">Login</button>
                     </form>
                     <span className="absolute top-[90px] right-5">
                         {show ? <button onClick={() => {

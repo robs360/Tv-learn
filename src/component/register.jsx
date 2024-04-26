@@ -8,7 +8,7 @@ import { getAuth, updateProfile } from "firebase/auth";
 import app from "./firebase.config";
 const auth=getAuth(app)
 const Register = () => {
-    const {createUser}=useContext(AuthContext);
+    const {createUser,user}=useContext(AuthContext);
     const [show, setShow] = useState(false);
     const subStyle = {
         backgroundImage: `url(${sec})`,
@@ -32,6 +32,7 @@ const Register = () => {
                 displayName:Name, photoURL: photo
               }).then(() => {
                   console.log('yes')
+                  console.log()
               }).catch((error) => {
                 console.log('No')
               });
