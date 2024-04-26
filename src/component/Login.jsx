@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import eye from '../assets/images/eye.png'
 import hidden from '../assets/images/hidden.png'
 import google from '../assets/images/google.png'
 import git from '../assets/images/github.png'
 import logimg from '../assets/images/logimg.png'
+import { AuthContext } from "./Authprovider";
 const Login = () => {
     const [show, setShow] = useState(false);
+    const { signIn }=useContext(AuthContext);
     const onSubmit = (e) => {
         e.preventDefault();
         const Email = e.target.email.value;
         const Password = e.target.password.value;
         console.log(Email, ' ', Password)
+        signIn(Email,Password)
+        .then(res=>console.log(res.user))
+        .catch(error=>console.error(error))
     }
     return (
         <div className="flex mx-auto items-center
