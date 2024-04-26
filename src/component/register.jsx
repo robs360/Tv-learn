@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import sec from "../assets/images/Regis4.jpg";
 import eye from '../assets/images/eye.png'
 import hidden from '../assets/images/hidden.png'
 import side from '../assets/images/regside2.jpg'
+import { AuthContext } from "./Authprovider";
 const Register = () => {
+    const {createUser}=useContext(AuthContext);
     const [show, setShow] = useState(false);
     const subStyle = {
         backgroundImage: `url(${sec})`,
@@ -21,6 +23,9 @@ const Register = () => {
         const photo = e.target.photo.value;
         const Password = e.target.password.value;
         console.log(Name,' ',Email,' ',photo,' ',Password)
+        createUser(Email,Password)
+        .then(res=>console.log(res.user))
+        .catch(error=>console.error(error))
     }
     return (
         <div className="min-h-[85vh] mx-auto flex
