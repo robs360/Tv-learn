@@ -4,6 +4,9 @@ import eye from '../assets/images/eye.png'
 import hidden from '../assets/images/hidden.png'
 import side from '../assets/images/regside2.jpg'
 import { AuthContext } from "./Authprovider";
+import { getAuth, updateProfile } from "firebase/auth";
+import app from "./firebase.config";
+const auth=getAuth(app)
 const Register = () => {
     const {createUser}=useContext(AuthContext);
     const [show, setShow] = useState(false);
@@ -24,7 +27,15 @@ const Register = () => {
         const Password = e.target.password.value;
         console.log(Name,' ',Email,' ',photo,' ',Password)
         createUser(Email,Password)
-        .then(res=>console.log(res.user))
+        .then(res=>{console.log(res.user)
+            updateProfile(auth.currentUser, {
+                displayName:Name, photoURL: photo
+              }).then(() => {
+                  console.log('yes')
+              }).catch((error) => {
+                console.log('No')
+              });
+        })
         .catch(error=>console.error(error))
     }
     return (
