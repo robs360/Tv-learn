@@ -7,7 +7,7 @@ import logimg from '../assets/images/logimg.png'
 import { AuthContext } from "./Authprovider";
 const Login = () => {
     const [show, setShow] = useState(false);
-    const { signIn ,googleSignin}=useContext(AuthContext);
+    const { signIn ,googleSignin,gitSignin}=useContext(AuthContext);
     console.log(googleSignin);
     const onhandleSubmit = (e) => {
         e.preventDefault();
@@ -25,6 +25,17 @@ const Login = () => {
             
             })
             .catch(error => console.error(error))
+    }
+    const gitClicked = () => {
+        gitSignin()
+            .then(res => {
+                console.log(res.user)
+
+            })
+            .catch(error => {
+                console.error(error)
+
+            })
     }
     return (
         <div className="flex mx-auto items-center
@@ -65,7 +76,7 @@ const Login = () => {
                                 <img src={google} alt="" srcset="" className="w-[50px] h-[50px]" />
                                 <h1 className="text-center text-xl">Google</h1>
                             </button>
-                            <button>
+                            <button onClick={gitClicked}>
                                 <img src={git} alt="" srcset="" className="w-[50px] h-[50px]" />
                                 <h1 className="text-center text-xl">Github</h1>
                             </button>
