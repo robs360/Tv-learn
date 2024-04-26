@@ -7,8 +7,9 @@ import logimg from '../assets/images/logimg.png'
 import { AuthContext } from "./Authprovider";
 const Login = () => {
     const [show, setShow] = useState(false);
-    const { signIn }=useContext(AuthContext);
-    const onSubmit = (e) => {
+    const { signIn ,googleSignin}=useContext(AuthContext);
+    console.log(googleSignin);
+    const onhandleSubmit = (e) => {
         e.preventDefault();
         const Email = e.target.email.value;
         const Password = e.target.password.value;
@@ -16,6 +17,14 @@ const Login = () => {
         signIn(Email,Password)
         .then(res=>console.log(res.user))
         .catch(error=>console.error(error))
+    }
+    const googleClicked = () => {
+        googleSignin()
+            .then(res => {
+                console.log(res.user)
+            
+            })
+            .catch(error => console.error(error))
     }
     return (
         <div className="flex mx-auto items-center
@@ -26,7 +35,7 @@ const Login = () => {
                 <div className="relative bg-[#ffffffcc] w-[360px]
                  md:w-[540px] mx-auto rounded-md p-4">
 
-                    <form onSubmit={onSubmit}>
+                    <form onSubmit={onhandleSubmit}>
 
                         <input type="email" name="email" placeholder="Email" className="input input-bordered mb-3 w-full " />
                         <div className="w-full relative">
@@ -52,7 +61,7 @@ const Login = () => {
                     <div className="w-full mt-5 border-t-2 border-gray-500">
                         <h1 className="text-xl text-center">Login With</h1>
                         <div className="w-full mt-3 flex justify-evenly">
-                            <button>
+                            <button onClick={googleClicked}>
                                 <img src={google} alt="" srcset="" className="w-[50px] h-[50px]" />
                                 <h1 className="text-center text-xl">Google</h1>
                             </button>
