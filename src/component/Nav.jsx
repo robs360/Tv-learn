@@ -6,11 +6,11 @@ import logout from '../assets/images/logout.png'
 const Nav = () => {
     const { user, logOut } = useContext(AuthContext);
     const [isHovered, setIsHovered] = useState(false);
-    
+
     const handleMouseEnter = () => {
         setIsHovered(true);
     };
-    
+
     const handleMouseLeave = () => {
         setIsHovered(false);
     };
@@ -19,8 +19,8 @@ const Nav = () => {
             .then(res => console.log(res.user))
             .catch(error => console.error(error))
     }
-    
-    
+
+
     return (
         <div className="navbar bg-blue-900 mb-12 text-white">
             <div className="navbar-start">
@@ -55,21 +55,25 @@ const Nav = () => {
                     </Link>
                     <li>
                         {
-                            user ? (<details
+                            user ? (<div class="avatar relative"
                                 onMouseEnter={handleMouseEnter}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                <summary>
-                                    <img src={user.photoURL}
-                                        className="w-[40px] h-[40px] rounded-[50%]" alt="" srcset="" />
-                                </summary>
-                                <ul className="p-2 text-black" style={{ display: isHovered ? "block" : "none" }}>
-                                    <li className="text-xl font-semibold"><a>Username:{user.displayName}</a></li>
-                                    <li><button className="text-xl font-semibold flex items-center" onClick={handleclicked}>Logout
-                                        <img src={logout} className="w-[20px] h-[20px]" alt="" srcset="" />
-                                    </button></li>
-                                </ul>
-                            </details>) : (<div className="text-[17px] font-semibold text-white">
+                                onMouseLeave={handleMouseLeave}>
+                                <div className="w-6 h-6 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                    <img src={user.photoURL} className="w-[25px] h-[25px] rounded-[50%" />
+                                </div>
+                                <div className="dropdown absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg"
+                                    style={{ display: isHovered ? "block" : "none" }}>
+                                    <div class="py-8">
+                                        <a href="#" className="block px-2 py-3 text-[19px] font-semibold text-gray-700 hover:bg-gray-100"></a>
+                                        <a href="#" className="block px-2 py-3 text-[19px] font-semibold text-gray-600 hover:bg-gray-100">{user.displayName}</a>
+                                        <button onClick={handleclicked} className="flex  px-2 py-3 text-[19px] font-semibold text-gray-700 hover:bg-gray-100">Logout
+                                            <img id="ex" src={logout} className="w-4 h-4" alt="" />
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            ) : (<div className="text-[17px] font-semibold text-white">
                                 <Link to={'/log'}>Login</Link>
 
                             </div>)
@@ -83,7 +87,7 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-               <button>xyz</button>
+                <button>xyz</button>
             </div>
         </div>
     )
