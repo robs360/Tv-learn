@@ -6,11 +6,13 @@ import git from '../assets/images/github.png'
 import logimg from '../assets/images/logimg.png'
 import { AuthContext } from "./Authprovider";
 import { ToastContainer, toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 const Login = () => {
     const [show, setShow] = useState(false);
     const { signIn, googleSignin, gitSignin } = useContext(AuthContext);
     console.log(googleSignin);
+    const location = useLocation()
+    const navigate = useNavigate();
     const onhandleSubmit = (e) => {
         e.preventDefault();
         const Email = e.target.email.value;
@@ -21,6 +23,7 @@ const Login = () => {
             .catch(error => {
                 console.error(error)
                 toast.error('Something went wrong')
+                navigate(location?.state ? location.state : '/')
             })
     }
     const googleClicked = () => {

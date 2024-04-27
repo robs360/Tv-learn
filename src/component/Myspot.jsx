@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./Authprovider";
-import { Link } from "react-router-dom";
+
 
 const Myspot = () => {
     const { user } = useContext(AuthContext);

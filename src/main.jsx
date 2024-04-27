@@ -15,6 +15,9 @@ import Myspot from './component/Myspot.jsx';
 import Allspot from './component/Allspot.jsx';
 import Details from './component/Details.jsx';
 import Error from './component/Error.jsx';
+import Private from './component/Private.jsx';
+
+
 
 const router = createBrowserRouter([
   {
@@ -36,11 +39,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addspot",
-        element:<Addspot></Addspot>,
+        element:<Private><Addspot></Addspot></Private>,
       },
       {
         path: "/myspot",
-        element:<Myspot></Myspot>,
+        element:<Private><Myspot></Myspot></Private>,
       },
       {
         path: "/allspot",
