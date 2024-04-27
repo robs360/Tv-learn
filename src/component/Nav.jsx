@@ -48,7 +48,7 @@ const Nav = () => {
                         </Link>
                         <Link to={'/myspot'}>
                             <li className="text-black text-[17px] font-medium">
-                                <a>My Spot</a>
+                                <a>My List</a>
                             </li>
                         </Link>
                         <Link to={'/addspot'}>
@@ -106,7 +106,7 @@ const Nav = () => {
                     </Link>
                     <Link to={'/myspot'}>
                         <li className="text-white text-[17px] font-medium">
-                            <a>My Spot</a>
+                            <a>My List</a>
                         </li>
                     </Link>
                     <Link to={'/addspot'}>

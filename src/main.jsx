@@ -14,11 +14,13 @@ import Addspot from './component/AddSpot.jsx';
 import Myspot from './component/Myspot.jsx';
 import Allspot from './component/Allspot.jsx';
 import Details from './component/Details.jsx';
+import Error from './component/Error.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement:<Error></Error>,
     children:[
       {
         path: "/",
