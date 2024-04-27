@@ -133,7 +133,7 @@ const Home = () => {
              <div className="bg-blue-900 rounded-md mt-36">
                 <h1 className="text-4xl text-white font-semibold text-center">
                     Know Some Place</h1>
-
+                    
                     <p className="text-center text-white text-[17px] 
                     font-semibold">Open any popular search engine, <br />
                      like Google, and use the text box on that

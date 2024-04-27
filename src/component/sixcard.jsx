@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import banner from '../assets/images/six.jpg'
+import { Link } from "react-router-dom";
 const Sixcard=()=>{
     const [six,setSix]=useState([]);
     useEffect(()=>{
@@ -36,8 +37,10 @@ const Sixcard=()=>{
                              
                          </div>
                      </div>
+                   <Link to={`/details/${item._id}`}>
                      <button className="w-full btn glass
                       bg-green-500 text-xl font-semibold">View Details</button>
+                   </Link>
                 </div>)
             }
         </div>

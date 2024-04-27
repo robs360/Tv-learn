@@ -13,6 +13,8 @@ import Authprovider from './component/Authprovider.jsx';
 import Addspot from './component/AddSpot.jsx';
 import Myspot from './component/Myspot.jsx';
 import Allspot from './component/Allspot.jsx';
+import Details from './component/Details.jsx';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,6 +43,12 @@ const router = createBrowserRouter([
       {
         path: "/allspot",
         element:<Allspot></Allspot>,
+      },
+      {
+        path: "/details/:id",
+        element:<Details></Details>,
+        loader:({params})=>fetch(`http://localhost:5000/spot/${params.id}`)
+        
       }
       
     ]
