@@ -30,26 +30,38 @@ const Nav = () => {
                     </div>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         <Link to={'/'}>
-                            <li className="text-white text-[17px] font-medium"><a>Home</a></li>
+                            <li className="text-black text-[17px] font-medium"><a>Home</a></li>
                         </Link>
-                        <li>
-                            <a>Parent</a>
-                            <ul className="p-2 text-black">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </li>
+                       {
+                        user?(<button onClick={handleclicked}>Logout</button>)
+                        :(<Link to={'/log'}>Login</Link>)
+                       }
                         <Link to={'/reg'}>
                             <li className="text-black text-[17px] font-medium">
                                 <a>Register</a>
                             </li>
                         </Link>
+                        <Link to={'/allspot'}>
+                            <li className="text-black text-[17px] font-medium">
+                                <a>All Spot</a>
+                            </li>
+                        </Link>
+                        <Link to={'/myspot'}>
+                            <li className="text-black text-[17px] font-medium">
+                                <a>My Spot</a>
+                            </li>
+                        </Link>
+                        <Link to={'/addspot'}>
+                            <li className="text-black text-[17px] font-medium">
+                                <a>Add Spot</a>
+                            </li>
+                        </Link>
                     </ul>
                 </div>
-               <div className="flex items-center">
-                  <a className="btn btn-ghost text-2xl">TVlearn</a>
-                  <img src={logo} className="w-[36px] h-[36px] rounded-[50%]" alt="" srcset="" />
-               </div>
+                <div className="flex items-center">
+                    <a className="btn btn-ghost text-2xl">TVlearn</a>
+                    <img src={logo} className="w-[36px] h-[36px] rounded-[50%]" alt="" srcset="" />
+                </div>
             </div>
             <div className="navbar-center text-black hidden lg:flex">
                 <ul className="menu text-white menu-horizontal px-1">
@@ -85,6 +97,21 @@ const Nav = () => {
                     <Link to={'/reg'}>
                         <li className="text-[17px] font-medium">
                             <a>Register</a>
+                        </li>
+                    </Link>
+                    <Link to={'/allspot'}>
+                        <li className="text-white text-[17px] font-medium">
+                            <a>All Spot</a>
+                        </li>
+                    </Link>
+                    <Link to={'/myspot'}>
+                        <li className="text-white text-[17px] font-medium">
+                            <a>My Spot</a>
+                        </li>
+                    </Link>
+                    <Link to={'/addspot'}>
+                        <li className="text-white text-[17px] font-medium">
+                            <a>Add Spot</a>
                         </li>
                     </Link>
                 </ul>
