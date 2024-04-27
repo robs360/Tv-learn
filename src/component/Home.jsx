@@ -9,6 +9,7 @@ import bus from '../assets/images/bus.png'
 import train from '../assets/images/tain2.png'
 import plain from '../assets/images/plan.jpg'
 import Piech from "./pie";
+import Faq from "./FAQ";
 
 
 const Home = () => {
@@ -35,7 +36,8 @@ const Home = () => {
                     <p className="font-semibold text-[17px]">Tourism is a social, cultural and economic phenomenon <br />
                         which entails the movement of people to <br />
                         countries or places outside their usual environment for personal or business</p>
-                    <div className="w-[80px] mt-5">
+                    <div className="w-[125px] mt-5">
+                         <h1 className="text-[18px] mb-3 font-semibold">Change Mode</h1>
                         <label className="flex cursor-pointer gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" /></svg>
                             <input type="checkbox" onChange={(e) => {
@@ -117,6 +119,16 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <div className="mt-28 w-[98%] mx-auto p-2 rounded-md bg-blue-900 text-white">
+                <h1 className="text-4xl text-center font-semibold">
+                    Let's Know about Us</h1>
+                    <p className="text-[17px] font-semibold text-center">
+                        Most of the information will be found in the header <br />
+                     or the footer of the website. The header of a website will include the <br />
+                       name of the website, and sub organization links or titles. </p>
+            </div>
+
+            <Faq></Faq>
         </div>
     )
 }

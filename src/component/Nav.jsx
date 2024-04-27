@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./Authprovider";
 import logout from '../assets/images/logout.png'
-
+import logo from '../assets/images/logo.jpg'
 const Nav = () => {
     const { user, logOut } = useContext(AuthContext);
     const [isHovered, setIsHovered] = useState(false);
@@ -46,7 +46,10 @@ const Nav = () => {
                         </Link>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+               <div className="flex items-center">
+                  <a className="btn btn-ghost text-2xl">TVlearn</a>
+                  <img src={logo} className="w-[36px] h-[36px] rounded-[50%]" alt="" srcset="" />
+               </div>
             </div>
             <div className="navbar-center text-black hidden lg:flex">
                 <ul className="menu text-white menu-horizontal px-1">
