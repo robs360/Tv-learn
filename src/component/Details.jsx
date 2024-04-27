@@ -7,7 +7,7 @@ const Details = () => {
             <div className="w-full min-h-[80vh] flex md:flex-row flex-col space-x-3 md:space-x-6 justify-center mt-11">
                 <div className=" bg-gray-100 rounded-lg px-2 md:px-6 py-4" data-aos="flip-left">
                     <img src={singleInfo.photo}
-                        className="w-[320px] h-[370px] lg:w-[370px] lg:h-[380px] mx-auto"
+                        className="w-[325px] h-[380px] lg:w-[370px] lg:h-[480px] mx-auto"
                         alt="" srcset="" />
                 </div>
                 <div className="p-1 md:p-2 space-y-5 w-[98%] md:w-[50%]">

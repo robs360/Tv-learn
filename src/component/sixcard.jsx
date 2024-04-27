@@ -19,7 +19,7 @@ const Sixcard=()=>{
        
     }
     return(
-        <div className="grid grid-cols-1 p-3 md:grid-cols-2 lg:grid-cols-3 my-36"  style={bannerStyle}>
+        <div className="grid grid-cols-1 p-1 md:grid-cols-2 lg:grid-cols-3 my-36" style={bannerStyle}>
             {
                 six.map(item=> <div className="w-[356px] mx-auto grid 
                
@@ -28,12 +28,15 @@ const Sixcard=()=>{
                      alt="" srcset="" />
                      <div className="border-t-2 py-4 flex justify-between border-gray-600">
                          <div className="mb-3">
-                             <h1 className="text-[18px] mb-4 font-semibold text-gray-700">Location:{item.location}</h1>
-                             <h1 className="text-[18px] font-semibold text-gray-700">Name:{item.country}</h1>
+                         <h1 className="text-[18px] font-semibold text-gray-700">Name:{item.country}</h1>
+                             <h1 className="text-[18px] font-semibold text-gray-700">Location:{item.location}</h1>
+                             <h1 className="text-[18px] font-semibold text-gray-700">Seasonality:{item.season}</h1>
+                            
                          </div>
                          <div>
-                             <h1 className="text-[18px] mb-4 font-semibold text-gray-700">Total Cost:{item.cost}$</h1>
+                             <h1 className="text-[18px] font-semibold text-gray-700">Total Cost:{item.cost}$</h1>
                              <h1 className="text-[18px] font-semibold text-gray-700">Travell Time:{item.travel_time}min</h1>
+                             <h1 className="text-[18px] font-semibold text-gray-700"> Visitors:{item.travel_time}</h1>
                              
                          </div>
                      </div>

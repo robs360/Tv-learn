@@ -5,6 +5,7 @@ import google from '../assets/images/google.png'
 import git from '../assets/images/github.png'
 import logimg from '../assets/images/logimg.png'
 import { AuthContext } from "./Authprovider";
+import { ToastContainer, toast } from "react-toastify";
 const Login = () => {
     const [show, setShow] = useState(false);
     const { signIn ,googleSignin,gitSignin}=useContext(AuthContext);
@@ -16,7 +17,10 @@ const Login = () => {
         console.log(Email, ' ', Password)
         signIn(Email,Password)
         .then(res=>console.log(res.user))
-        .catch(error=>console.error(error))
+        .catch(error=>{
+            console.error(error)
+            toast.error('Something went wrong')
+        })
     }
     const googleClicked = () => {
         googleSignin()
@@ -38,7 +42,11 @@ const Login = () => {
             })
     }
     return (
-        <div className="flex mx-auto items-center
+       <div>
+         <div>
+            <ToastContainer></ToastContainer>
+         </div>
+         <div className="flex mx-auto items-center
          md:flex-row flex-col-reverse md:space-y-0 space-y-5">
             <div className="mx-auto border-2 border-gray-400 rounded-md ">
                 <h1 className="text-5xl text-blue-900 font-semibold text-center mt-5 mb-5">
@@ -88,6 +96,7 @@ const Login = () => {
                 <img src={logimg} className="w-[350px] h-[380px]" alt="" srcset="" />
             </div>
         </div>
+       </div>
     )
 }
 export default Login

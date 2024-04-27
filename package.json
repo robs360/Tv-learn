@@ -24,6 +24,7 @@
     "react-dom": "^18.2.0",
     "react-minimal-pie-chart": "^8.4.0",
     "react-router-dom": "^6.23.0",
+    "react-toastify": "^10.0.5",
     "recharts": "^2.12.6",
     "sort-by": "^1.2.0",
     "styled-components": "^6.1.8"
