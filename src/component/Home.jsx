@@ -10,6 +10,7 @@ import train from '../assets/images/tain2.png'
 import plain from '../assets/images/plan.jpg'
 import Piech from "./pie";
 import Faq from "./FAQ";
+import Sixcard from "./sixcard";
 
 
 const Home = () => {
@@ -129,6 +130,18 @@ const Home = () => {
             </div>
 
             <Faq></Faq>
+             <div className="bg-blue-900 rounded-md mt-36">
+                <h1 className="text-4xl text-white font-semibold text-center">
+                    Know Some Place</h1>
+
+                    <p className="text-center text-white text-[17px] 
+                    font-semibold">Open any popular search engine, <br />
+                     like Google, and use the text box on that
+                      page to run your search. For example, if
+                       you open DuckDuckGo and type into  the box <br />
+                     lifewire, you'll find Lifewire</p>
+             </div>
+            <Sixcard></Sixcard>
         </div>
     )
 }
