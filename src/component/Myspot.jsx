@@ -58,7 +58,7 @@ const Myspot = () => {
                 <p className="text-center"><span className="loading loading-spinner loading-lg"></span></p>
             ) : post.length > 0 ? (
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 my-36">
-                    {post.map(item => <div className="border-2 border-black w-[360px] md:w-[460px] mx-auto">
+                    {post.map(item => <div className="border-2 shadow-lg bg-[#ffffff] border-black w-[360px] md:w-[460px] mx-auto">
                         <table border="1" className="w-full p-2">
                             <tr className="border-[1px] border-gray-400">
                                 <td className="text-[18px] p-1 font-semibold">Country:{item.country}</td>

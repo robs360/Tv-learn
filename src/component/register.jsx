@@ -7,6 +7,7 @@ import { AuthContext } from "./Authprovider";
 import { getAuth, updateProfile } from "firebase/auth";
 import app from "./firebase.config";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 const auth = getAuth(app)
 const Register = () => {
     const { createUser, user } = useContext(AuthContext);
@@ -57,10 +58,12 @@ const Register = () => {
                     console.log('No')
                 });
                 setSuccess('you have Successfully Register')
+                toast.success('you have successfully register')
             })
             .catch(error => {
                 console.error(error)
                 setError('somethong went wrong')
+                toast.warn('Somthing Went wrong')
             })
     }
     return (

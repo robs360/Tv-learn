@@ -6,7 +6,12 @@ import { AuthContext } from "./Authprovider";
 const Private=({children})=>{
     const location=useLocation();
     console.log(location)
-    const {user}=useContext(AuthContext);
+
+    const {user,loading}=useContext(AuthContext);
+     console.log(loading)
+    if(loading){
+        return <p>loading....</p>
+    }
   
     if(user){
         return children;

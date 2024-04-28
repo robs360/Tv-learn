@@ -5,7 +5,7 @@ import google from '../assets/images/google.png'
 import git from '../assets/images/github.png'
 import logimg from '../assets/images/logimg.png'
 import { AuthContext } from "./Authprovider";
-import { ToastContainer, toast } from "react-toastify";
+import {  toast } from "react-toastify";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 const Login = () => {
     const [show, setShow] = useState(false);
@@ -19,12 +19,13 @@ const Login = () => {
         const Password = e.target.password.value;
         console.log(Email, ' ', Password)
         signIn(Email, Password)
-            .then(res => console.log(res.user))
+            .then(res => {console.log(res.user)
+             toast.success('Wow you have Succesfully loged-in')
+            })
             .catch(error => {
                 console.error(error)
                 toast.warn('Something went wrong', {
-                    position: "top-right",
-                    autoClose: 5000,                
+                                  
                 })
                 navigate(location?.state ? location.state : '/')
             })
@@ -51,9 +52,7 @@ const Login = () => {
     return (
         <div>
             <div>
-                <ToastContainer
-                
-                ></ToastContainer>
+               
             </div>
             <div className="flex mx-auto items-center
          md:flex-row flex-col-reverse md:space-y-0 space-y-5">
