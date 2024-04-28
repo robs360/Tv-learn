@@ -22,7 +22,7 @@ const Nav = () => {
 
 
     return (
-        <div className="navbar bg-blue-900 mb-12 text-white">
+        <div className="navbar text-white bg-blue-900 mb-12 ">
             <div className="navbar-start">
                 <div className="dropdown text-black">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -95,7 +95,7 @@ const Nav = () => {
                         }
                     </li>
                     <Link to={'/reg'}>
-                        <li className="text-[17px] font-medium">
+                        <li className="text-[17px] text-white font-medium">
                             <a>Register</a>
                         </li>
                     </Link>
