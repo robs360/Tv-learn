@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./Authprovider";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const Myspot = () => {
@@ -18,19 +20,42 @@ const Myspot = () => {
             })
 
     }, []);
-  
 
-    const handleClicked=(id)=>{
-        fetch(`http://localhost:5000/spot/${id}`,{
-            method:'DELETE'
-        })
-        .then(res=>res.json())
-        .then(data=>console.log(data))
+
+    const handleClicked = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+              
+
+                fetch(`http://localhost:5000/spot/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {console.log(data)
+                     if(data.deletedCount>0){
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                        });
+                     }
+                    })
+            }
+        });
+
     }
     return (
         <div>
             {loading ? (
-                <p><span className="loading loading-spinner loading-lg"></span></p>
+                <p className="text-center"><span className="loading loading-spinner loading-lg"></span></p>
             ) : post.length > 0 ? (
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 my-36">
                     {post.map(item => <div className="border-2 border-black w-[360px] md:w-[460px] mx-auto">
@@ -45,13 +70,18 @@ const Myspot = () => {
                             </tr>
                             <tr className="py-4">
                                 <td colSpan={2}><button className="btn mt-5 glass w-full text-xl 
-                                font-semibold bg-blue-900" onClick={()=>{
-                                    handleClicked(item._id)
-                                }}>Delete</button></td>
+                                font-semibold bg-blue-900" onClick={() => {
+                                        handleClicked(item._id)
+                                    }}>Delete</button></td>
                             </tr>
                             <tr className="py-4">
-                                <td colSpan={2}><button className="btn mt-5 glass w-full text-xl 
-                                font-semibold bg-green-400">Update</button></td>
+                                <td colSpan={2}>
+
+                                    <Link to={`/update/${item._id}`}>
+                                     <button className="btn mt-5 glass w-full text-xl 
+                                       font-semibold bg-green-400">Update</button>
+                                    </Link>
+                                </td>
                             </tr>
                         </table>
 

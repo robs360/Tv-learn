@@ -16,6 +16,7 @@ import Allspot from './component/Allspot.jsx';
 import Details from './component/Details.jsx';
 import Error from './component/Error.jsx';
 import Private from './component/Private.jsx';
+import Update from './component/Update.jsx';
 
 
 
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "/allspot",
         element:<Allspot></Allspot>,
+      },
+      {
+        path: "/update/:id",
+        element:<Update></Update>,
       },
       {
         path: "/details/:id",

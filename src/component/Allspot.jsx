@@ -4,13 +4,19 @@ import { Link } from "react-router-dom";
 
 const Allspot = () => {
     const [allItem, setallItem] = useState([]);
+    const [loading,setLoading]=useState(true);
     useEffect(() => {
         fetch('http://localhost:5000/spot')
             .then(res => res.json())
-            .then(data => setallItem(data))
-    }, [])
+            .then(data => {setallItem(data)
+               setLoading(false);
+            })
+    }, [allItem])
     return (
-        <div>
+       <div>
+           {
+            loading?(<p className="text-center"><span className="loading loading-spinner loading-lg"></span></p>):(
+                <div>
             <div className="bg-blue-900 w-[92%] mx-auto my-28">
                 <h1 className="text-center text-4xl font-semibold
                 text-white">See All Spot</h1>
@@ -49,6 +55,9 @@ const Allspot = () => {
                 }
             </div>
         </div>
+            )
+           }
+       </div>
     )
 }
 export default Allspot
