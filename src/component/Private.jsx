@@ -10,7 +10,7 @@ const Private=({children})=>{
     const {user,loading}=useContext(AuthContext);
      console.log(loading)
     if(loading){
-        return <p>loading....</p>
+        return <p className="text-[18px] flex items-center justify-center">loading <span className="loading loading-dots loading-md"></span></p>
     }
   
     if(user){

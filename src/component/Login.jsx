@@ -12,6 +12,7 @@ const Login = () => {
     const { signIn, googleSignin, gitSignin } = useContext(AuthContext);
     console.log(googleSignin);
     const location = useLocation()
+    console.log(location);
     const navigate = useNavigate();
     const onhandleSubmit = (e) => {
         e.preventDefault();
@@ -21,13 +22,14 @@ const Login = () => {
         signIn(Email, Password)
             .then(res => {console.log(res.user)
              toast.success('Wow you have Succesfully loged-in')
+             navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 console.error(error)
                 toast.warn('Something went wrong', {
                                   
                 })
-                navigate(location?.state ? location.state : '/')
+               
             })
     }
     const googleClicked = () => {
