@@ -1,6 +1,7 @@
 
 import React from "react";
 import banner from '../assets/images/addspot.jpg'
+import Swal from "sweetalert2";
 
 const Addspot = () => {
     const bannerStyle = {
@@ -36,7 +37,15 @@ const Addspot = () => {
             body:JSON.stringify(spotInfo),
         })
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+            console.log(data)
+            Swal.fire({
+                title:'Success!',
+                text:'Spot Added Successfully',
+                icon:'success',
+                confirmButtonText:'Cool'
+            })
+        })
     }
     return (
         <div className="w-[98%] mx-auto p-3 mt-9 mb-20">
