@@ -22,7 +22,10 @@ const Login = () => {
             .then(res => console.log(res.user))
             .catch(error => {
                 console.error(error)
-                toast.error('Something went wrong')
+                toast.warn('Something went wrong', {
+                    position: "top-right",
+                    autoClose: 5000,                
+                })
                 navigate(location?.state ? location.state : '/')
             })
     }
@@ -48,7 +51,9 @@ const Login = () => {
     return (
         <div>
             <div>
-                <ToastContainer></ToastContainer>
+                <ToastContainer
+                
+                ></ToastContainer>
             </div>
             <div className="flex mx-auto items-center
          md:flex-row flex-col-reverse md:space-y-0 space-y-5">

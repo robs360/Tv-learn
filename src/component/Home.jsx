@@ -11,6 +11,7 @@ import plain from '../assets/images/plan.jpg'
 import Piech from "./pie";
 import Faq from "./FAQ";
 import Sixcard from "./sixcard";
+import Services from "./Services";
 
 
 const Home = () => {
@@ -142,6 +143,16 @@ const Home = () => {
                      lifewire, you'll find Lifewire</p>
              </div>
             <Sixcard></Sixcard>
+            <div className="my-32 bg-blue-900 p-3 py-5 rounded-md">
+                <h1 className="text-4xl text-center font-semibold text-white">
+                    Services And Budget planing</h1>
+                    <p className="text-[17px] my-3 text-white font-semibold text-center">
+                    Tour planning is a planning process <br />
+                     in which transport orders are grouped into tours and <br />
+                      put into a certain order. 
+                    </p>
+            </div>
+            <Services></Services>
         </div>
     )
 }

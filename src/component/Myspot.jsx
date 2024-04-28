@@ -18,7 +18,15 @@ const Myspot = () => {
             })
 
     }, []);
+  
 
+    const handleClicked=(id)=>{
+        fetch(`http://localhost:5000/spot/${id}`,{
+            method:'DELETE'
+        })
+        .then(res=>res.json())
+        .then(data=>console.log(data))
+    }
     return (
         <div>
             {loading ? (
@@ -37,7 +45,9 @@ const Myspot = () => {
                             </tr>
                             <tr className="py-4">
                                 <td colSpan={2}><button className="btn mt-5 glass w-full text-xl 
-                                font-semibold bg-blue-900">Delete</button></td>
+                                font-semibold bg-blue-900" onClick={()=>{
+                                    handleClicked(item._id)
+                                }}>Delete</button></td>
                             </tr>
                             <tr className="py-4">
                                 <td colSpan={2}><button className="btn mt-5 glass w-full text-xl 
