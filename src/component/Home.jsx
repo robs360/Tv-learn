@@ -93,13 +93,13 @@ const Home = () => {
                         deffernt country by us</h1>
                     <Piech></Piech>
                 </div>
-                <div className="flex items-center  p-4 rounded-sm bg-blue-900 text-white">
+                <div className="flex items-center md:w-[310px] rounded-sm bg-blue-900 text-white">
                     <div>
 
                         <h1 className="text-4xl text-center md:text-start font-bold">Let's Take Vibe <br />
                             of Your Journey</h1>
                         <p className="font-semibold text-center md:text-start text-[17px] mt-4">We can provide a value <br />
-                            and may can give a proper sirvice our services country is <br />
+                            our services country is 
                             Spain,Itally,England,france,Switzerland,Netherland</p>
 
                         <div data-aos="flip-left">
