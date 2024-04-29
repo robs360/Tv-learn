@@ -130,7 +130,7 @@ const Nav = () => {
             <div className="navbar-end">
                 <Link to={'/cat'}
                 >
-                    <button className="text-[18px] font-semibold">Categories</button>
+                    <button className="text-[18px] btn font-semibold">Categories</button>
                 </Link>
             </div>
         </div>

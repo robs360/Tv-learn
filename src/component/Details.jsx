@@ -12,7 +12,7 @@ const Details = () => {
                 </div>
                 <div className="p-1 md:p-2 space-y-5 w-[98%] md:w-[50%]">
                     <div className="border-b-2 border-gray-400 pb-8">
-                        <h1 className="text-3xl font-medium">Country Name:{singleInfo.country}</h1>
+                        <h1 data-aos="flip-left" className="text-3xl font-medium">Country Name:{singleInfo.country}</h1>
                         <div className="flex flex-col mt-4 md:flex-row justify-between">
                             <h1 className="text-gray-500 text-[18px] font-semibold">Spot Name: {singleInfo.spotname}</h1>
                             <h1 className="text-gray-500 text-[18px] font-semibold">
@@ -39,7 +39,7 @@ const Details = () => {
                     </div>
 
                     <div className="w-[70%] mx-auto">
-                        <button className="p-2 btn glass bg-blue-900 
+                        <button className="p-2 btn glass bg-green-500 
               text-xl w-full rounded-md font-semibold">
                             Lets Go?</button>
                     </div>
