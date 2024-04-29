@@ -64,7 +64,7 @@ const router = createBrowserRouter([
       {
         path: "/details/:id",
         element:<Private><Details></Details></Private>,
-        loader:({params})=>fetch(`http://localhost:5000/spot/${params.id}`)
+        loader:({params})=>fetch(`https://tv-learn.vercel.app/spot/${params.id}`)
         
       },
       {

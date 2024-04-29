@@ -7,7 +7,7 @@ const Challenge = () => {
     const [loading, setLoading] = useState(true);
     const { name } = useParams();
     useEffect(() => {
-        fetch('http://localhost:5000/spot')
+        fetch('https://tv-learn.vercel.app/spot')
             .then(res => res.json())
             .then(data => {
                 console.log(data);

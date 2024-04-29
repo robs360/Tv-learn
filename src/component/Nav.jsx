@@ -80,10 +80,10 @@ const Nav = () => {
                                 </div>
                                 <div className="dropdown absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg"
                                     style={{ display: isHovered ? "block" : "none" }}>
-                                    <div class="py-8">
+                                    <div class="py-8 px-3">
                                         <a href="#" className="block px-2 py-3 text-[19px] font-semibold text-gray-700 hover:bg-gray-100"></a>
                                         <a href="#" className="block px-2 py-3 text-[19px] font-semibold text-gray-600 hover:bg-gray-100">{user.displayName}</a>
-                                        <button onClick={handleclicked} className="flex  px-2 py-3 text-[19px] font-semibold text-gray-700 hover:bg-gray-100">Logout
+                                        <button onClick={handleclicked} className="flex btn glass bg-blue-900 px-2 py-3 text-[19px] font-semibold text-gray-700 hover:bg-gray-100">Logout
                                             <img id="ex" src={logout} className="w-4 h-4" alt="" />
                                         </button>
                                     </div>

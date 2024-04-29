@@ -29,7 +29,7 @@ const Addspot = () => {
             spotname, cost, travel_time, visitors, season, descrip
         }
         console.log(spotInfo);
-        fetch('http://localhost:5000/spot',{
+        fetch('https://tv-learn.vercel.app/spot',{
             method:'POST',
             headers:{
              'content-type':'application/json'

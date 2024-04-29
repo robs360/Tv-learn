@@ -5,7 +5,7 @@ const Budget=({budget})=>{
     console.log(budget);
     const [info,setInfo]=useState([]);
     useEffect(()=>{
-       fetch('http://localhost:5000/spot')
+       fetch('https://tv-learn.vercel.app/spot')
        .then(res=>res.json())
        .then(data=>{
            const filterData=data.filter(item=> item.cost<=budget)

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./Authprovider";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
-
+import banner from '../assets/images/travell.jpg'
 
 const Myspot = () => {
     const { user } = useContext(AuthContext);
@@ -10,8 +10,16 @@ const Myspot = () => {
     const [loading, setLoading] = useState(true);
     const [post, setPost] = useState([]);
 
+
+    const bannerStyle = {
+        backgroundImage: `url(${banner})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+
+    }
     useEffect(() => {
-        fetch('http://localhost:5000/spot')
+        fetch('https://tv-learn.vercel.app/spot')
             .then(res => res.json())
             .then(data => {
                 const filteredData = data.filter(item => item.email === user.email);
@@ -33,20 +41,28 @@ const Myspot = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-              
 
-                fetch(`http://localhost:5000/spot/${id}`, {
+                fetch(`https://tv-learn.vercel.app/spot/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
-                    .then(data => {console.log(data)
-                     if(data.deletedCount>0){
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "Your file has been deleted.",
-                            icon: "success"
-                        });
-                     }
+
+                    .then(data => {
+                        console.log(data)
+                        const filterData = post.filter(item => {
+
+                            console.log(item, ' ', id);
+                            return item._id !== id
+                        })
+                        setPost(filterData);
+                        if (data.deletedCount > 0) {
+
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
                     })
             }
         });
@@ -57,8 +73,9 @@ const Myspot = () => {
             {loading ? (
                 <p className="text-center"><span className="loading loading-spinner loading-lg"></span></p>
             ) : post.length > 0 ? (
-                <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 my-36">
-                    {post.map(item => <div className="border-2 shadow-lg bg-[#ffffff] border-black w-[360px] md:w-[460px] mx-auto">
+                <div style={bannerStyle}
+                    className="grid grid-cols-1 min-h-[86vh] rounded-md py-6 gap-10 lg:grid-cols-2 my-20">
+                    {post.map(item => <div className="border-2 shadow-lg h-[290px] bg-[#ffffff80] border-black w-[354px] md:w-[460px] mx-auto">
                         <table border="1" className="w-full p-2">
                             <tr className="border-[1px] border-gray-400">
                                 <td className="text-[18px] p-1 font-semibold">Country:{item.country}</td>
@@ -78,7 +95,7 @@ const Myspot = () => {
                                 <td colSpan={2}>
 
                                     <Link to={`/update/${item._id}`}>
-                                     <button className="btn mt-5 glass w-full text-xl 
+                                        <button className="btn mt-5 glass w-full text-xl 
                                        font-semibold bg-green-400">Update</button>
                                     </Link>
                                 </td>

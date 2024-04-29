@@ -5,7 +5,7 @@ const Categories=()=>{
 
     const [country,setCountry]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/country')
+        fetch('https://tv-learn.vercel.app/country')
         .then(resr=>resr.json())
         .then(data=>setCountry(data))
     },[country])
