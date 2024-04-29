@@ -93,10 +93,10 @@ const Home = () => {
                         deffernt country by us</h1>
                     <Piech></Piech>
                 </div>
-                <div className="flex items-center md:w-[310px] rounded-sm bg-blue-900 text-white">
+                <div className="flex items-center w-[340px]rounded-sm bg-blue-900 text-white">
                     <div>
 
-                        <h1 className="text-4xl text-center md:text-start font-bold">Let's Take Vibe <br />
+                        <h1 className="text-3xl text-center md:text-start font-bold">Let's Take Vibe <br />
                             of Your Journey</h1>
                         <p className="font-semibold text-center md:text-start text-[17px] mt-4">We can provide a value <br />
                             our services country is 
@@ -110,11 +110,11 @@ const Home = () => {
                         </div>
 
                         <div>
-                            <p className="text-4xl font-semibold text-center md:text-start">Our Services for travell</p>
+                            <p className="text-3xl font-semibold text-center md:text-start">Our Services for travell</p>
                             <div className="flex justify-evenly mt-4">
                                 <img src={bus} className="w-[59px] h-[56px]" alt="" srcset="" />
                                 <img src={train} className="w-[59px] h-[56px]" alt="" srcset="" />
-                                <img src={plain} className="w-[69px] h-[64px]" alt="" srcset="" />
+                              
                             </div>
                         </div>
 
