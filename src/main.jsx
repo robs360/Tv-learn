@@ -19,6 +19,8 @@ import Private from './component/Private.jsx';
 import Update from './component/Update.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Challenge from './Challenge.jsx';
+import Categories from './component/Catogories.jsx';
 
 
 const router = createBrowserRouter([
@@ -52,6 +54,10 @@ const router = createBrowserRouter([
         element:<Allspot></Allspot>,
       },
       {
+        path: "/challenge/:name",
+        element:<Challenge></Challenge>,
+      },
+      {
         path: "/update/:id",
         element:<Update></Update>,
       },
@@ -60,6 +66,10 @@ const router = createBrowserRouter([
         element:<Private><Details></Details></Private>,
         loader:({params})=>fetch(`http://localhost:5000/spot/${params.id}`)
         
+      },
+      {
+        path: "/cat",
+        element:<Categories></Categories>,
       }
       
     ]

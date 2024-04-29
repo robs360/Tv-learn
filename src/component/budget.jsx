@@ -8,7 +8,7 @@ const Budget=({budget})=>{
        fetch('http://localhost:5000/spot')
        .then(res=>res.json())
        .then(data=>{
-           const filterData=data.filter(item=>item.cost<=budget)
+           const filterData=data.filter(item=> item.cost<=budget)
            setInfo(filterData);
            console.log(info);
        })

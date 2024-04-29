@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "./Authprovider";
 import logout from '../assets/images/logout.png'
 import logo from '../assets/images/logo.jpg'
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 const Nav = () => {
     const { user, logOut } = useContext(AuthContext);
     const [isHovered, setIsHovered] = useState(false);
@@ -89,15 +91,20 @@ const Nav = () => {
 
                             </div>
                             ) : (<div className="text-[17px] font-semibold text-white">
-                                <Link to={'/log'}>Login</Link>
+                                <Link to={'/log'}> <a data-tooltip-id="Hel" data-tooltip-content={'Take Our Best Services'} 
+                            data-tooltip-place="top">Login</a> 
+                             <Tooltip id="Hel"></Tooltip>
+                            </Link>
 
                             </div>)
                         }
                     </li>
                     <Link to={'/reg'}>
-                        <li className="text-[17px] text-white font-medium">
-                            <a>Register</a>
+                        <li className="text-[17px] text-white font-semibold">
+                            <a data-tooltip-id="Hello" data-tooltip-content={'lets Go Register'} 
+                            data-tooltip-place="top">Register</a> <Tooltip id="Hello"></Tooltip>
                         </li>
+                        <Tooltip id="Hello" />
                     </Link>
                     <Link to={'/allspot'}>
                         <li className="text-white text-[17px] font-medium">
@@ -105,19 +112,26 @@ const Nav = () => {
                         </li>
                     </Link>
                     <Link to={'/myspot'}>
-                        <li className="text-white text-[17px] font-medium">
-                            <a>My List</a>
+                        <li className="text-white text-[17px] font-semibold">
+                            <a data-tooltip-id="Hey" data-tooltip-content={'lets Go MyList'} 
+                            data-tooltip-place="top">My List</a><Tooltip id="Hey"></Tooltip>
                         </li>
+                        
                     </Link>
                     <Link to={'/addspot'}>
-                        <li className="text-white text-[17px] font-medium">
-                            <a>Add Spot</a>
+                        <li className="text-white text-[17px] font-semibold">
+                            <a data-tooltip-id="H" data-tooltip-content={'Enjoy Your Travell'} 
+                            data-tooltip-place="top">Add Spot</a><Tooltip id="H"></Tooltip>
                         </li>
+                        
                     </Link>
                 </ul>
             </div>
             <div className="navbar-end">
-                <button>xyz</button>
+                <Link to={'/cat'}
+                >
+                    <button className="text-[18px] font-semibold">Categories</button>
+                </Link>
             </div>
         </div>
     )
