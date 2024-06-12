@@ -12,7 +12,7 @@ const Update=()=>{
         backgroundRepeat: 'no-repeat',
         
     }
-
+    
     const handleUpdate=(e)=>{
         e.preventDefault();
         const country = e.target.country.value;
@@ -37,7 +37,7 @@ const Update=()=>{
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
-            
+                
                 Swal.fire({
                     title:'Success!',
                     text:'Spot Updated Successfully',

@@ -47,7 +47,7 @@ const Sixcard=()=>{
                          </div>
                        <Link to={`/details/${item._id}`}>
                          <button className="w-full btn glass
-                          bg-green-500 text-xl font-semibold">View Details</button>
+                          bg-blue-900 text-xl font-semibold">View Details</button>
                        </Link>
                     </div>)
                 }

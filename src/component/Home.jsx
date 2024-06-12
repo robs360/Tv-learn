@@ -93,7 +93,7 @@ const Home = () => {
                         deffernt country by us</h1>
                     <Piech></Piech>
                 </div>
-                <div className="flex items-center w-[325px]rounded-sm bg-blue-900 text-white">
+                <div className="flex md:hidden items-center w-[310px]rounded-sm bg-blue-900 text-white">
                     <div>
 
                         <h1 className="text-3xl text-center md:text-start font-bold">Let's Take Vibe <br />

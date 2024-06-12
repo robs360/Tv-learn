@@ -85,8 +85,6 @@ const Register = () => {
                              glass font-semibold text-center w-3/4">Register
 
                             </button>
-
-
                         </form>
                         <Link to={'/log'}>
                             <div className="w-full flex my-5">

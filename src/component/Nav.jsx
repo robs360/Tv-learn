@@ -76,7 +76,7 @@ const Nav = () => {
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}>
                                 <div className="w-6 h-6 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                    <img src={user.photoURL} className="w-[25px] h-[25px] rounded-[50%" />
+                                    <img src={user.photoURL} className="w-[25px] h-[25px] rounded-[50%]" />
                                 </div>
                                 <div className="dropdown absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg"
                                     style={{ display: isHovered ? "block" : "none" }}>

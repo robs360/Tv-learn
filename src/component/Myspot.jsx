@@ -50,7 +50,7 @@ const Myspot = () => {
                     .then(data => {
                         console.log(data)
                         const filterData = post.filter(item => {
-
+                            
                             console.log(item, ' ', id);
                             return item._id !== id
                         })
@@ -93,7 +93,6 @@ const Myspot = () => {
                             </tr>
                             <tr className="py-4">
                                 <td colSpan={2}>
-
                                     <Link to={`/update/${item._id}`}>
                                         <button className="btn mt-5 glass w-full text-xl 
                                        font-semibold bg-green-400">Update</button>

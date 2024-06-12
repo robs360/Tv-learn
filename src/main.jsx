@@ -79,7 +79,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Authprovider>
-
        <RouterProvider router={router}/>
        <ToastContainer></ToastContainer>
     </Authprovider>

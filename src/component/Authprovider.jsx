@@ -7,8 +7,6 @@ import {
 } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import app from "./firebase.config";
-
-
 export const AuthContext = createContext(null)
 const googleprovider=new GoogleAuthProvider();
 const githubProvider=new GithubAuthProvider()
