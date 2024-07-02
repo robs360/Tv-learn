@@ -46,3 +46,16 @@ Bullet features of the website
   .Can delete the added spot
   
   .can see detail of a spot
+
+  *how clone react project
+clone project
+git clone [url]
+
+enter into project
+cd react
+
+install Dependency
+npm install
+
+start
+npm run dev
