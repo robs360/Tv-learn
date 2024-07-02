@@ -37,4 +37,9 @@ Here anyone cna add place whcih he like,also he can delete i mean i used here cr
     .recharts: "^2.12.6",
     .sort-by: "^1.2.0",
     .styled-components: "^6.1.8",
-    .sweetalert2: "^11.10.8" 
+    .sweetalert2: "^11.10.8"
+
+  
+  .Here anyone can add a spot
+  .Can delete the added spot
+  .can see detail of a spot
