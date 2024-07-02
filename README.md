@@ -39,7 +39,10 @@ Here anyone cna add place whcih he like,also he can delete i mean i used here cr
     .styled-components: "^6.1.8",
     .sweetalert2: "^11.10.8"
 
+Bullet features of the website
   
   .Here anyone can add a spot
+  
   .Can delete the added spot
+  
   .can see detail of a spot
