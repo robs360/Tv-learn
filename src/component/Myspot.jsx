@@ -6,7 +6,7 @@ import banner from '../assets/images/travell.jpg'
 
 const Myspot = () => {
     const { user } = useContext(AuthContext);
-    console.log(user)
+ 
     const [loading, setLoading] = useState(true);
     const [post, setPost] = useState([]);
 
@@ -48,10 +48,9 @@ const Myspot = () => {
                     .then(res => res.json())
 
                     .then(data => {
-                        console.log(data)
+                        
                         const filterData = post.filter(item => {
                             
-                            console.log(item, ' ', id);
                             return item._id !== id
                         })
                         setPost(filterData);

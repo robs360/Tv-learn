@@ -11,7 +11,7 @@ const Services = () => {
         e.preventDefault();
         
         setBudget(e.target.bud.value);
-        console.log(budget);
+     
     }
     
     return (

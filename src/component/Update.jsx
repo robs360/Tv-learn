@@ -26,7 +26,7 @@ const Update=()=>{
         const descrip = e.target.descrip.value;
         const spotUpdate={country,location,spotname,cost,travel_time,visitors,
         season,descrip,photo}
-        console.log(spotUpdate);
+       
         fetch(`https://tv-learn.vercel.app/spot/${id}`,{
             method:'PUT',
             headers:{

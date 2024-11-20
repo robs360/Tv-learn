@@ -29,7 +29,7 @@ const Register = () => {
         const Email = e.target.email.value;
         const photo = e.target.photo.value;
         const Password = e.target.password.value;
-        console.log(Name, ' ', Email, ' ', photo, ' ', Password)
+     
         if (!Name || !Email || !photo || !Password) {
             setError('Please fill all fields');
             return;
